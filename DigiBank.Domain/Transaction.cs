@@ -1,4 +1,6 @@
-﻿namespace DigiBank.Domain
+﻿using System.Transactions;
+
+namespace DigiBank.Domain
 {
     public class Transaction
     {
@@ -15,5 +17,13 @@
 
         public decimal Amount { get; set; }
         public TransactionType Type { get; set; }
+    }
+
+    public class CashDeposit : CreditTransaction
+    {
+        public const string CASHDEPOSIT = "Cash Deposit";
+        public CashDeposit(decimal amount) : base(amount, new Info(CASHDEPOSIT))
+        {
+        }
     }
 }

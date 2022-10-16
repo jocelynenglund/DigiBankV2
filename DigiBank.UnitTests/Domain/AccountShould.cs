@@ -8,7 +8,7 @@ namespace DigiBank.UnitTests.Domain
         {
             var account = new Account(AccountName);
 
-            account.Name.Should().Be(AccountName);
+            account.Info.Name.Should().Be(AccountName);
         }
 
         [Fact]
