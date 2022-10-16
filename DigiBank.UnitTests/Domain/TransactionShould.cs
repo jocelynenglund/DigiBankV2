@@ -23,7 +23,7 @@ namespace DigiBank.UnitTests.Domain
         [Fact]
         public void HaveACreditTransactionSubclass()
         {
-            var transaction = new CreditTransaction(2.5m);
+            var transaction = new CreditTransaction(2.5m, new Info("source"));
             transaction.Should().BeAssignableTo<Transaction>();
             transaction.Type.Should().Be(TransactionType.Credit);
         }
